@@ -3,55 +3,70 @@
 <head>
     <%- include('partial/header') %>
     <script>
-        function myFunction() {
-            var dots = document.getElementById("dots");
-            var moreText = document.getElementById("more");
-            var btnText = document.getElementById("myBtn");
+        $(document).ready(function() {
+            $("#myBtn").click(function() {
+                var elem = $("#myBtn").text();
+                if (elem == "Read More") {
+                    //Stuff to do when btn is in the read more state
+                    $("#myBtn").text("Read Less");
+                    $("#info").slideDown();
+                } else {
+                    //Stuff to do when btn is in the read less state
+                    $("#myBtn").text("Read More");
+                    $("#info").slideUp();
+                }
+            });
+        });
+        // function myFunction() {
+        //     var dots = document.getElementById("dots");
+        //     var moreText = document.getElementById("more");
+        //     var btnText = document.getElementById("myBtn");
 
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
-            }
-        }
+        //     if (dots.style.display === "none") {
+        //         dots.style.display = "inline";
+        //         btnText.innerHTML = "Read more";
+        //         moreText.style.display = "none";
+        //     } else {
+        //         dots.style.display = "none";
+        //         btnText.innerHTML = "Read less";
+        //         moreText.style.display = "inline";
+        //     }
+        // }
 
-        function myFunction2() {
-            var dots = document.getElementById("dots2");
-            var moreText = document.getElementById("more2");
-            var btnText = document.getElementById("myBtn2");
+        // function myFunction2() {
+        //     var dots = document.getElementById("dots2");
+        //     var moreText = document.getElementById("more2");
+        //     var btnText = document.getElementById("myBtn2");
 
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
-            }
+        //     if (dots.style.display === "none") {
+        //         dots.style.display = "inline";
+        //         btnText.innerHTML = "Read more";
+        //         moreText.style.display = "none";
+        //     } else {
+        //         dots.style.display = "none";
+        //         btnText.innerHTML = "Read less";
+        //         moreText.style.display = "inline";
+        //     }
+        // }
 
             //document.getElementById("dots2").style.textOverflow = "ellipsis";
-        }
+        
 
-        function myFunction3() {
-            var dots = document.getElementById("dots3");
-            var moreText = document.getElementById("more3");
-            var btnText = document.getElementById("myBtn3");
+        // function myFunction3() {
+        //     var dots = document.getElementById("dots3");
+        //     var moreText = document.getElementById("more3");
+        //     var btnText = document.getElementById("myBtn3");
 
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
-            }
-        }
+        //     if (dots.style.display === "none") {
+        //         dots.style.display = "inline";
+        //         btnText.innerHTML = "Read more";
+        //         moreText.style.display = "none";
+        //     } else {
+        //         dots.style.display = "none";
+        //         btnText.innerHTML = "Read less";
+        //         moreText.style.display = "inline";
+        //     }
+        // }
     </script>
     <style>
         #more {display: none;}
@@ -69,16 +84,6 @@
             overflow: hidden;
             text-overflow: ellipsis;            
         }
-
-        /* Remove extra left and right margins, due to padding */
-        .row {margin: 0 -5px;}
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
     </style>
 </head>
   
@@ -94,29 +99,34 @@
             </div>
             <br>
             <div class="row">
+                <% for(var i = 0; i < projects.length; i++) { %>
                 <div class="col">
                     <div class="card" style="width: 20rem;">            
-                        <h5 class="card-header">Sem 4 ITS Project</h5>
-                        <img src="img/bg-title-01.jpg" class="card-img-top" alt="...">
+                        <h5 class="card-header"><%= projects[i].header %></h5>
+                        <img src="<%= projects[i].img %>" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Tomatus Station - Order Management System</h5>
-                            <p>This project is fully coded in PHP, HTML and CSS. There 2 levels of users which are 
-                                staffs and suppliers. Staffs make an order and suppliers will approve the order if the stock is <span id="dots">...</span><span id="more">available. The system can do basic functions which are create, read, update and delete. 
+                            <h5 class="card-title"><%= projects[i].title %></h5>
+                            <div id="info"> <!-- This project is fully coded in PHP, HTML and CSS. There 2 levels of users which are 
+                                staffs and suppliers. Staffs make an order and suppliers will approve the order if the stock is <span id="dots">...</span><span id="more">available. 
+                                The system can do basic functions which are create, read, update and delete. 
                                 In this system, I add one extra function where the system can send email notification
                                 to staffs once suppliers approve the request. In this group project, I am responsible in leading my team to work 
-                                together to finish the task since I am group leader aka project manager.
-                            </span>
-                            </p>
-                            <button onclick="myFunction()" id="myBtn">Read more</button> 
+                                together to finish the task since I am group leader aka project manager. -->
+                                <%= projects[i].description %>
+                            <!-- </span> -->
+                            </div>
+                            <!-- onclick="myFunction()" -->
+                            <button id="<%= projects[i].btn%>"><Read Less></button> 
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/nasuhasri/Tomatus-Station" target="_blank" rel="nofollow">
+                            <a href="<%= projects[i].href %>" target="_blank" rel="nofollow">
                                 <input type="button" class="btn btn-primary btn-lg buttonGo" value="View This Project" />
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <% } %>
+                <!-- <div class="col">
                     <div class="card" style="width: 20rem;">
                         <h5 class="card-header">I-Aset System</h5>
                         <img src="img/bg-title-02.jpg" class="card-img-top" alt="...">
@@ -159,7 +169,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </article>
