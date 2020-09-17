@@ -56,7 +56,7 @@ const projectList = [
     img: 'img/bg-title-01.jpg',
     href: 'https://github.com/nasuhasri/Tomatus-Station',
     description: 'This project is fully coded in PHP, HTML and CSS. There 2 levels of users which are staffs and suppliers. Staffs make an order and suppliers will approve the order if the stock is available. The system can do basic functions which are create, read, update and delete. In this system, I add one extra function where the system can send email notification to staffs once suppliers approve the request. In this group project, I am responsible in leading my team to work together to finish the task since I am group leader aka project manager.',
-    btn: 'MyBtn'
+    info: '#info'
   },
   { 
     header: 'I-Aset System',
@@ -64,7 +64,7 @@ const projectList = [
     img: 'img/bg-title-02.jpg',
     href: 'https://github.com/nasuhasri/proZakat/tree/master/asset', 
     description: 'This project is fully coded in PHP, HTML and CSS. There 2 levels of users which are staffs and suppliers. Staffs make an order and suppliers will approve the order if the stock is available. The system can do basic functions which are create, read, update and delete. In this system, I add one extra function where the system can send email notification to staffs once suppliers approve the request. In this group project, I am responsible in leading my team to work together to finish the task since I am group leader aka project manager.',
-    btn: 'MyBtn'
+    info: '#info2'
   },
   { 
     header: 'Sem 3 - Theme Park Project',
@@ -72,7 +72,7 @@ const projectList = [
     img: 'img/bg-title-03.jpg',
     href: 'https://github.com/nasuhasri/Tomatus-Station',
     description: 'This project is fully coded in Java and GUI. Users can enter details and choose which package they want. I am in charge in making GUI coding and that was my first experience in using GUI code. In addition, the GUI is not in our syllabus and I add that as an extra function for my group projects. I learnt the GUI code from my lecturer privately with my friends in 2 hours. The application also is using object, class and attributes which makes it easier to call the function or method.',
-    btn: 'MyBtn'
+    info: '#info3'
   }
 ]
 

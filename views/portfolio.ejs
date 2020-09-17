@@ -2,72 +2,6 @@
 <html lang="en">
 <head>
     <%- include('partial/header') %>
-    <script>
-        $(document).ready(function() {
-            $("#myBtn").click(function() {
-                var elem = $("#myBtn").text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $("#myBtn").text("Read Less");
-                    $("#info").slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $("#myBtn").text("Read More");
-                    $("#info").slideUp();
-                }
-            });
-        });
-        // function myFunction() {
-        //     var dots = document.getElementById("dots");
-        //     var moreText = document.getElementById("more");
-        //     var btnText = document.getElementById("myBtn");
-
-        //     if (dots.style.display === "none") {
-        //         dots.style.display = "inline";
-        //         btnText.innerHTML = "Read more";
-        //         moreText.style.display = "none";
-        //     } else {
-        //         dots.style.display = "none";
-        //         btnText.innerHTML = "Read less";
-        //         moreText.style.display = "inline";
-        //     }
-        // }
-
-        // function myFunction2() {
-        //     var dots = document.getElementById("dots2");
-        //     var moreText = document.getElementById("more2");
-        //     var btnText = document.getElementById("myBtn2");
-
-        //     if (dots.style.display === "none") {
-        //         dots.style.display = "inline";
-        //         btnText.innerHTML = "Read more";
-        //         moreText.style.display = "none";
-        //     } else {
-        //         dots.style.display = "none";
-        //         btnText.innerHTML = "Read less";
-        //         moreText.style.display = "inline";
-        //     }
-        // }
-
-            //document.getElementById("dots2").style.textOverflow = "ellipsis";
-        
-
-        // function myFunction3() {
-        //     var dots = document.getElementById("dots3");
-        //     var moreText = document.getElementById("more3");
-        //     var btnText = document.getElementById("myBtn3");
-
-        //     if (dots.style.display === "none") {
-        //         dots.style.display = "inline";
-        //         btnText.innerHTML = "Read more";
-        //         moreText.style.display = "none";
-        //     } else {
-        //         dots.style.display = "none";
-        //         btnText.innerHTML = "Read less";
-        //         moreText.style.display = "inline";
-        //     }
-        // }
-    </script>
     <style>
         #more {display: none;}
         .buttonGo:hover {
@@ -106,17 +40,7 @@
                         <img src="<%= projects[i].img %>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><%= projects[i].title %></h5>
-                            <div id="info"> <!-- This project is fully coded in PHP, HTML and CSS. There 2 levels of users which are 
-                                staffs and suppliers. Staffs make an order and suppliers will approve the order if the stock is <span id="dots">...</span><span id="more">available. 
-                                The system can do basic functions which are create, read, update and delete. 
-                                In this system, I add one extra function where the system can send email notification
-                                to staffs once suppliers approve the request. In this group project, I am responsible in leading my team to work 
-                                together to finish the task since I am group leader aka project manager. -->
-                                <%= projects[i].description %>
-                            <!-- </span> -->
-                            </div>
-                            <!-- onclick="myFunction()" -->
-                            <button id="<%= projects[i].btn%>"><Read Less></button> 
+                            <%= projects[i].description %>
                         </div>
                         <div class="card-footer">
                             <a href="<%= projects[i].href %>" target="_blank" rel="nofollow">
@@ -126,50 +50,6 @@
                     </div>
                 </div>
                 <% } %>
-                <!-- <div class="col">
-                    <div class="card" style="width: 20rem;">
-                        <h5 class="card-header">I-Aset System</h5>
-                        <img src="img/bg-title-02.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Zakat Melaka - i-Aset System</h5>
-                            <p>This project is fully coded in PHP, HTML and CSS. There 2 levels of users which are 
-                                staffs and suppliers. Staffs make an order and suppliers will approve the order if the stock is <span id="dots2">...</span><span id="more2">available. The system can do basic functions which are create, read, update and delete. 
-                                In this system, I add one extra function where the system can send email notification
-                                to staffs once suppliers approve the request. In this group project, I am responsible in leading my team to work 
-                                together to finish the task since I am group leader aka project manager.
-                            </span>
-                            </p>
-                            <button onclick="myFunction2()" id="myBtn2">Read more</button> 
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/nasuhasri/proZakat/tree/master/asset" target="_blank" rel="nofollow">
-                                <input type="button" class="btn btn-primary btn-lg buttonGo" value="View This Project" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 20rem;">
-                        <h5 class="card-header">Sem 3 - Theme Park Project</h5>
-                        <img src="img/bg-title-03.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Java - Theme Park Application</h5>
-                            <p>This project is fully coded in Java and GUI. Users can enter details and choose which package they want.
-                                I am in charge in making GUI coding and that was my first experience in using GUI code. In addition,
-                                the GUI is not in our syllabus and <span id="dots3">...</span><span id="more3">I add that as an extra function for
-                                my group projects. I learnt the GUI code from my lecturer privately with my friends in 2 hours. The application also 
-                                is using object, class and attributes which makes it easier to call the function or method.
-                            </span>
-                            </p>
-                            <button onclick="myFunction3()" id="myBtn3">Read more</button> 
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" target="_blank" rel="nofollow">
-                                <input type="button" class="btn btn-primary btn-lg buttonGo" value="View This Project" />
-                            </a>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </article>
